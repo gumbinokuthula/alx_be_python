@@ -1,23 +1,21 @@
-def arithmetic_operations(a, b):
-    """
-    Perform basic arithmetic operations on two numbers.
-
-    Parameters:
-    a (int or float): The first number.
-    b (int or float): The second number.
-
-    Returns:
-    tuple: A tuple containing (sum, difference, product, quotient)
-    """
-    if b == 0:
-        quotient = "Undefined (division by zero)"
+def perform_operation(num1, num2, operation):
+    if operation == '+':
+        return num1 + num2
+    elif operation == '-':
+        return num1 - num2
+    elif operation == '*':
+        return num1 * num2
+    elif operation == '/':
+        if num2 == 0:
+            return "Error: Cannot divide by zero."
+        else:
+            return num1 / num2
     else:
-        quotient = a / b
+        return "Error: Unsupported operation."
 
-    return (a + b, a - b, a * b, quotient)
-if __name__ == "__main__":
-    result = arithmetic_operations(10, 2)
-    print("Sum:", result[0])
-    print("Difference:", result[1])
-    print("Product:", result[2])
-    print("Quotient:", result[3])
+print(perform_operation(10, 5, '+'))  
+print(perform_operation(10, 5, '-'))  
+print(perform_operation(10, 5, '*')) 
+print(perform_operation(10, 0, '/')) 
+print(perform_operation(10, 5, '/'))  
+print(perform_operation(10, 5, '^')) 
